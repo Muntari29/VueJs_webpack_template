@@ -13,6 +13,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',    // 절대 경로 옵션 추가
     clean: true,
   },
   module: {
@@ -38,4 +39,7 @@ module.exports = {
       ]
     })
   ],
+  devServer:{
+    historyApiFallback:true //이제 SPA 기본 페이지 index.html 파일로 설정 404 처리 관련 로컬에서만! 배포에서는 다르게!
+  }
 }

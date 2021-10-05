@@ -19,6 +19,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/, //노드 모듈안의 js파일은 바벨로더로 변환하지 않음
+        use: 'babel-loader'
+      },
+      {
         test: /\.vue$/,
         use: 'vue-loader',
       },
